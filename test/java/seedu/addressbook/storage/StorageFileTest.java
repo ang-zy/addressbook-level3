@@ -44,7 +44,7 @@ public class StorageFileTest {
     @Test
     public void load_invalidFormat_exceptionThrown() throws Exception {
         // The file contains valid xml data, but does not match the AddressBook class
-        StorageFile storage = getStorage("InvalidData.txt");
+        Storage storage = getStorage("InvalidData.txt");
         thrown.expect(StorageOperationException.class);
         storage.load();
     }
@@ -61,7 +61,7 @@ public class StorageFileTest {
 
     @Test
     public void save_nullAddressBook_exceptionThrown() throws Exception {
-        StorageFile storage = getTempStorage();
+        Storage storage = getTempStorage();
         thrown.expect(NullPointerException.class);
         storage.save(null);
     }
